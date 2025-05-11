@@ -26,6 +26,6 @@ model <- lm(mpg ~ wt + hp, data = mtcars)
 model.equation(model)
 
 # Print equation to console
-print(model.equation(model, latex = FALSE))
+model.equation(model, latex = FALSE)
 
 }

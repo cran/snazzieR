@@ -14,10 +14,6 @@
 #' @examples
 #' color.ref()
 color.ref <- function() {
-  # Save current graphical parameters
-  oldpar <- par(no.readonly = TRUE)
-  on.exit(par(oldpar))  # Ensure settings are restored on function exit *immediately*
-
   # Define color palette
   colors <- matrix(c(
     "#590d21", "#9f193d", "#C31E4A", "#e66084", "#f1a7bb",
@@ -34,7 +30,7 @@ color.ref <- function() {
   col_labels <- c("Deep", "Dark", "Regular", "Light", "Pale")
 
   # Adjust margins & move axis labels closer
-  par(mar = c(3, 3, 0, 0), mgp = c(1.5, 0.4, 0))  # Changes applied after on.exit() is set
+  par(mar = c(3, 3, 0, 0), mgp = c(1.5, 0.4, 0))  # Reduced mgp[2] (axis label spacing)
 
   # Plot setup
   plot(1, 1, type = "n", xlim = c(0.5, 5.5), ylim = c(0.5, 7.5),

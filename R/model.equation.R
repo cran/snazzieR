@@ -16,7 +16,7 @@
 #' model.equation(model)
 #'
 #' # Print equation to console
-#' print(model.equation(model, latex = FALSE))
+#' model.equation(model, latex = FALSE)
 #'
 #' @export
 model.equation <- function(model, latex = TRUE) {
@@ -44,6 +44,6 @@ model.equation <- function(model, latex = TRUE) {
     latex_equation <- paste0("\\[", latex_equation, "\\]")  # Wrap in display math mode
     return(knitr::asis_output(latex_equation))
   } else {
-    return(equation)
+    cat(equation, "\n")
   }
 }
